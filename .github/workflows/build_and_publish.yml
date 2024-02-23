@@ -28,11 +28,11 @@ jobs:
         with:
           name: Maven Tests
           path: target/surefire-reports/*.xml
-          reporter: java-junit
+          reporter: java-junitghcr.io
           fail-on-error: true
 
       - name: Build and push the image
         run: |
-          docker login --username pushkar14-mst --password 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 ghcr.io
+          docker login --username pushkar14-mst --password ${{secrets.PRIME_REPO_ACCESS}} ghcr.io
           docker build -t ghcr.io/pushkar14-mst/prime-service:latest --file Dockerfile .  
           docker push ghcr.io/pushkar14-mst/prime-service:latest
