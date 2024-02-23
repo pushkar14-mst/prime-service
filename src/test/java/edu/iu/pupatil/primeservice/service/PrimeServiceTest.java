@@ -14,9 +14,9 @@ class PrimeServiceTest {
         assertEquals(expected, actual);
     }
     @Test
-    void _2_is_not_prime() {
+    void _13_is_prime() {
         int number = 2;
-        boolean expected = false;
+        boolean expected = true;
         boolean actual = primeService.isPrime(number);
         assertEquals(expected, actual);
     }
